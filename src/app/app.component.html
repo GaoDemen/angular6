@@ -1,8 +1,48 @@
-<div style="text-align:center">
-  <h1>
-    {{ title }}!
-  </h1>
-
+<header class="demen_header">
+  <div class="demen_box" nz-row>
+    <div  nz-col [nzSpan]="21" [nzPush]="3">
+        <i class="anticon anticon-poweroff demen_loginOut"></i>
+    </div>
+    <div class="demen_logo" nz-col [nzSpan]="3" [nzPull]="21">
+        <img src="../favicon.ico" alt=""> 熊哥外卖
+    </div>
+  </div>
+  
+</header>
+<!-- <nav>
+    <a routerLink="/members">首页</a>
+    <a routerLink="/user">我的</a>
+  </nav> -->
+<div nz-row>
+  <div class="demen_router" nz-col [nzSpan]="21" [nzPush]="3">
+    <router-outlet nz-col [nzSpan]="18" [nzPush]="6"></router-outlet>
+  </div>
+  <div class="demen_nav" nz-col [nzSpan]="3" [nzPull]="21">
+    <ul nz-menu [nzMode]="'inline'">
+      <li nz-submenu nzOpen>
+        <span title><i class="anticon anticon-appstore"></i> 店铺管理 </span>
+        <ul>
+          <li nz-menu-item><i class="anticon anticon-home"></i>首页</li>
+          <li nz-menu-item><i class="anticon anticon-barcode"></i>商品</li>
+          <li nz-menu-item><i class="anticon anticon-team"></i>顾客</li>
+          <li nz-menu-item><i class="anticon anticon-line-chart"></i>数据</li>
+          <li nz-menu-item><i class="anticon anticon-pay-circle-o"></i>财务</li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen>
+        <span title><i class="anticon anticon-appstore"></i> 订单管理 </span>
+        <ul>
+          <li nz-menu-item><i class="anticon anticon-shopping-cart"></i>订单</li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen>
+        <span title><i class="anticon anticon-appstore"></i> 系统设置 </span>
+        <ul>
+          <li nz-menu-item><i class="anticon anticon-folder"></i>资料</li>
+          <li nz-menu-item><i class="anticon anticon-disconnect"></i>帮助</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
-
 

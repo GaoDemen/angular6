@@ -1,0 +1,45 @@
+<div>
+
+  <div class="demen_card" nz-col [nzSpan]="24">
+    <nz-card nzTitle="今日订单">
+
+    </nz-card>
+  </div>
+
+  <div class="demen_card" nz-col [nzSpan]="24">
+    <nz-table
+      #rowSelectionTable
+      [nzData]="data"
+      (nzCurrentPageDataChange)="currentPageDataChange($event)"
+      (nzPageIndexChange)="refreshStatus()"
+      (nzPageSizeChange)="refreshStatus()">
+      <thead>
+        <tr>
+          <th nzShowCheckbox [(nzChecked)]="allChecked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="checkAll($event)"></th>
+          <th>姓名</th>
+          <th>联系方式</th>
+          <th>实际应付</th>
+          <th>菜品名称</th>
+          <th>优惠价格</th>
+          <th>快递费</th>
+          <th>地址</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+          <td nzShowCheckbox [(nzChecked)]="data.checked" [nzDisabled]="data.disabled" (nzCheckedChange)="refreshStatus()"></td>
+          <td>{{data.name}}</td>
+          <td>{{data.phone}}</td>
+          <td>{{data.prize}}</td>
+          <td >
+              <p *ngFor="let item of rowSelectionTable.data"> {{ item.name }} x {{ item.number }}份 </p>
+          </td>
+          <td>{{data.preferential}}</td>
+          <td>{{data.fare}}</td>
+          <td>{{data.address}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+
+</div>
